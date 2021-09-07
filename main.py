@@ -25,12 +25,12 @@ def main():
 
     model, encoder_model, decoder_model, model_name = Network(input_shape=inputs_shape,
                                                               output_shape= targets_shape,
-                                                              learning_rate=0.001).simpleLSTM()
+                                                              learning_rate=0.001).transformerModel()
 
     log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
-    path_checkpoint = model_name + "_model_checkpoint.h5"
-    es_callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", min_delta=0, patience=10)
+    path_checkpoint = model_name + "_model_checkpoint.tf"
+    es_callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", min_delta=0, patience=50)
 
     modelckpt_callback = tf.keras.callbacks.ModelCheckpoint(
         monitor="val_loss",
@@ -62,8 +62,8 @@ def main():
     steps = 3
     for x, y in zip(x_val[start:start+steps], decoder_inputs_val[start:start+steps]):
         dv.show_plot(
-            [x.numpy(), y_val[start+i:start+5+i], predict_sequence(encoder_model, decoder_model, model_name, x.numpy(), 5, y)],
-            y.shape[0]*5,
+            [x.numpy(), y_val[start+i:start+2+i], predict_sequence(encoder_model, decoder_model, model_name, x.numpy(), 2, y)],
+            y.shape[0]*2,
             "Prediction",
         )
         i += 1

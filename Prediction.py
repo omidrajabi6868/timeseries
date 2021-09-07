@@ -32,6 +32,9 @@ def predict_sequence(infenc, infdec, model_name, source, n_steps, y):
             # update state
             state = [h_forward, c_forward, h_backward, c_backward]
 
+        if model_name == 'Transformer':
+            yhat = infdec.predict(target_seq)
+
         # update target sequence
         target_seq = yhat
 

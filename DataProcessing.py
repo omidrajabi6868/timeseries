@@ -13,8 +13,8 @@ class DataProcessing:
         self.split_fraction = 0.7
         self.train_split = int(self.split_fraction * int(csvData.shape[0]))
         self.step = 1
-        self.past = 4
-        self.future = 92
+        self.past = 48
+        self.future = 48
         self.batch_size = 1
         self.date_time_key = "local_timestamp"
         return
