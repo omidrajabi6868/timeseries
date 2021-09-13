@@ -173,21 +173,20 @@ class Network:
 
         return model, encoder_model, decoder_model, 'BD'
 
+    # ToDo: Add mask to the MultiheadAttention of the decoder part.
     def transformerModel(self):
-        time2vec_dim = 1
-        num_heads = 5
-        head_size = 128
-        ff_dim = 128
+        time2vec_dim = 32
+        num_heads = 2
+        ff_dim = 32
         number_layers = 5
-        dropout = 0
+        dropout = 0.1
 
         encoder_inputs = tf.keras.Input(shape=(self.input_shape[1], self.input_shape[2]), name="input_encoder")
         time2vec_encoder = Time2Vec(kernel_size=time2vec_dim)
         encoder_time_embedding = tf.keras.layers.TimeDistributed(time2vec_encoder, name='TimeDistributed_encoder')(encoder_inputs)
         x_encoder = K.concatenate([encoder_inputs, encoder_time_embedding], -1)
-        encoder_attention = AttentionBlock(num_heads=num_heads, head_size=head_size,
-                                           ff_dim=ff_dim, dropout=dropout)
-        encoder_outputs = encoder_attention([x_encoder, x_encoder])
+        encoder_attention = AttentionBlock(x_encoder.shape[2], num_heads, ff_dim, rate=dropout)
+        encoder_outputs = encoder_attention([x_encoder, x_encoder], True)
 
         decoder_inputs = tf.keras.layers.Input(shape=(self.output_shape[1], self.output_shape[2]), name="input_decoder")
         time2vec_decoder = Time2Vec(kernel_size=time2vec_dim)
@@ -195,11 +194,11 @@ class Network:
         x_decoder = K.concatenate([decoder_inputs, decoder_time_embedding], -1)
 
         decoder_attention_layers = [
-            AttentionBlock(num_heads=num_heads, head_size=head_size, ff_dim=ff_dim, dropout=dropout) for _ in
-            range(number_layers)]
+            AttentionBlock(x_decoder.shape[2], num_heads, ff_dim, rate=dropout) for _ in range(number_layers)]
         for i, attention_layer in enumerate(decoder_attention_layers):
             if i is 0:
-                x_decoder = attention_layer([x_decoder, x_decoder])
+                x_decoder = attention_layer([x_decoder, x_decoder], True,
+                                            attention_mask=self.create_look_ahead_mask(x_decoder.shape[1]))
                 # x_decoder = tf.keras.layers.Conv1D(3, 7, 2, padding='valid', activation='relu', name='decoder_conv_1')(
                 #     x_decoder)
                 # x_decoder = tf.keras.layers.Conv1D(3, 5, 2, padding='valid', activation='relu', name='decoder_conv_2')(
@@ -209,7 +208,7 @@ class Network:
                 # x_decoder = tf.keras.layers.Conv1D(3, 2, 2, padding='valid', activation='relu', name='decoder_conv_4')(
                 #     x_decoder)
             else:
-                x_decoder = attention_layer([encoder_outputs, x_decoder])
+                x_decoder = attention_layer([encoder_outputs, x_decoder], True)
 
         x_decoder = K.reshape(x_decoder, (-1, x_decoder.shape[1] * x_decoder.shape[2]))
         decoder_dense = tf.keras.layers.Dense(self.output_shape[2], activation='relu')
@@ -226,3 +225,7 @@ class Network:
         # plot_model(decoder_model, to_file='Decoder.png')
 
         return model, encoder_model, decoder_outputs, 'Transformer'
+
+    def create_look_ahead_mask(self, size):
+        mask = 1 - tf.linalg.band_part(tf.ones((size, size)), -1, 0)
+        return mask  # (seq_len, seq_len)
