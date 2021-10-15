@@ -3,6 +3,8 @@ from tensorflow import keras
 import datetime
 import numpy as np
 import tensorflow as tf
+from sklearn.experimental import enable_iterative_imputer
+from sklearn.impute import IterativeImputer
 
 
 class DataProcessing:
@@ -10,19 +12,22 @@ class DataProcessing:
     def __init__(self, csvData):
         self.csvData = csvData
         self.feature_keys = csvData.keys()[3:]
-        self.split_fraction = 0.7
+        self.split_fraction = 0.8
         self.train_split = int(self.split_fraction * int(csvData.shape[0]))
         self.step = 1
-        self.past = 48
-        self.future = 48
+        self.past = 4*1
+        self.future = 4*24
         self.batch_size = 1
         self.date_time_key = "local_timestamp"
         return
 
     def normalize(self, data):
+        imp = IterativeImputer(max_iter=10, random_state=0)
+        imp.fit(data)
+        data = imp.transform(data)
         self.data_min = np.min(data, axis=0)
         self.data_max = np.max(data, axis=0)
-        return ((data - self.data_min) / (self.data_max - self.data_min))
+        return (((data - self.data_min) / (self.data_max - self.data_min)))
 
     def data_cleaning(self):
         print(
@@ -32,13 +37,13 @@ class DataProcessing:
         selected_features = [self.feature_keys[i] for i in [9]]
         features = self.csvData[selected_features]
         features.index = self.csvData[self.date_time_key]
-        features.head()
+        features.head(10)
 
-        features = self.normalize(features.values)
+        features= self.normalize(features.values)
         features = pd.DataFrame(features)
-        features.head()
+        features.head(10)
 
-        train_data = features.loc[0: self.train_split - 1]
+        train_data = features.loc[0: self.train_split-1]
         val_data = features.loc[self.train_split:]
 
         return train_data, val_data, features
@@ -49,7 +54,7 @@ class DataProcessing:
         end = self.future + self.train_split
 
         x_train = train_data[[i for i in range(1)]].values
-        y_train = features.iloc[start:end][[0]]
+        y_train = features.iloc[start:end]
 
         sequence_length = int(self.past / self.step)
         x_train = keras.preprocessing.timeseries_dataset_from_array(
@@ -71,14 +76,17 @@ class DataProcessing:
         decoder_inputs_train = []
         for mat in y_train:
             for m in mat:
-                decoder_inputs_train.append(np.array([0] + list(np.squeeze(m)[:-1])))
+                if len(m) < 2:
+                    decoder_inputs_train.append(np.array([-1]))
+                else:
+                    decoder_inputs_train.append(np.concatenate([np.array([-1]), np.squeeze(m)[:-1]], axis=0))
 
         x_end = len(val_data) - self.future
 
         label_start = self.train_split + self.past
 
         x_val = val_data.iloc[:x_end][[i for i in range(1)]].values
-        y_val = features.iloc[label_start:][[0]]
+        y_val = features.iloc[label_start:]
 
         x_val = keras.preprocessing.timeseries_dataset_from_array(
             x_val,
@@ -99,7 +107,10 @@ class DataProcessing:
         decoder_inputs_val = []
         for mat in y_val:
             for m in mat:
-                decoder_inputs_val.append(np.array([0] + list(np.squeeze(m)[:-1])))
+                if len(m) < 2:
+                    decoder_inputs_val.append(np.array([-1]))
+                else:
+                    decoder_inputs_val.append(np.concatenate([np.array([-1]), np.squeeze(m)[:-1]], axis=0))
 
         x_train = tf.squeeze((tf.convert_to_tensor(list(x_train))), axis=1)
         y_train = tf.squeeze((tf.convert_to_tensor(list(y_train))), axis=1)
@@ -111,5 +122,14 @@ class DataProcessing:
         print("Input shape:", x_train.shape)
         print("Target shape:",y_train.shape)
 
-        return x_train, y_train, decoder_inputs_train, x_val, y_val, decoder_inputs_val, x_train.shape, y_train.shape
+        self.x_train = x_train
+        self.y_train = y_train
+        self.decoder_inputs_train = decoder_inputs_train
+        self.x_val = x_val
+        self.y_val = y_val
+        self.decoder_inputs_val = decoder_inputs_val
+        self.train_data = train_data
+        self.val_data = val_data
+
+        return x_train.shape, y_train.shape
 

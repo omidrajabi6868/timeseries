@@ -9,10 +9,9 @@ from Prediction import predict_sequence
 
 
 def main():
+    train_model = False
 
-    train_model = True
-
-    dataset = pd.read_csv('PV.csv')
+    dataset = pd.read_csv('Data/PV.csv')
     print("The shape of raw data is ", dataset.shape)
     print(dataset.head(10))
 
@@ -21,16 +20,16 @@ def main():
     dv.show_heatmap()
 
     dt = DataProcessing(dataset)
-    x_train, y_train, decoder_inputs_train, x_val, y_val, decoder_inputs_val, inputs_shape, targets_shape = dt.preparing_dataset()
+    inputs_shape, targets_shape = dt.preparing_dataset()
 
-    model, encoder_model, decoder_model, model_name = Network(input_shape=inputs_shape,
-                                                              output_shape= targets_shape,
-                                                              learning_rate=0.001).transformerModel()
+    model, model_name = Network(input_shape=inputs_shape,
+                                output_shape=targets_shape,
+                                learning_rate=0.01).transformerModel()
 
     log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
-    path_checkpoint = model_name + "_model_checkpoint.tf"
-    es_callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", min_delta=0, patience=50)
+    path_checkpoint = 'models/' + model_name + "_model_checkpoint.tf"
+    es_callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", min_delta=0, patience=200)
 
     modelckpt_callback = tf.keras.callbacks.ModelCheckpoint(
         monitor="val_loss",
@@ -40,16 +39,23 @@ def main():
         save_best_only=True,
     )
 
-    encoder_inputs = x_train
-    decoder_outputs = y_train
+    encoder_inputs = dt.x_train
+    decoder_outputs = dt.y_train
+    if model_name=='Transformer':
+        decoder_inputs_val = dt.decoder_inputs_val
+        decoder_inputs_train = dt.decoder_inputs_train
+    else:
+        decoder_inputs_train = tf.zeros(len(dt.y_train), 1)
+        decoder_inputs_val = tf.zeros(len(dt.y_val), 1)
 
     if train_model:
+        # model.load_weights(path_checkpoint)
         history = model.fit(
             [encoder_inputs, decoder_inputs_train],
-            decoder_outputs,
+            decoder_outputs[:, :, :None],
             epochs=1000,
-            batch_size=32,
-            validation_data=([x_val, decoder_inputs_val], y_val),
+            batch_size=64,
+            validation_data=([dt.x_val, decoder_inputs_val], dt.y_val[:, :, :None]),
             callbacks=[tensorboard_callback, es_callback, modelckpt_callback],
         )
 
@@ -57,28 +63,10 @@ def main():
 
     model.load_weights(path_checkpoint)
 
-    i=0
-    start = 2000
-    steps = 3
-    for x, y in zip(x_val[start:start+steps], decoder_inputs_val[start:start+steps]):
-        dv.show_plot(
-            [x.numpy(), y_val[start+i:start+2+i], predict_sequence(encoder_model, decoder_model, model_name, x.numpy(), 2, y)],
-            y.shape[0]*2,
-            "Prediction",
-        )
-        i += 1
+    # dv.show_plot(dt.val_data, model, model_name, dt.past, dt.future, 500)
 
-    # dv.plot_val_data(x_val, y_val, model)
+    dv.show_together(dt.val_data, inputs_shape, targets_shape, dt.past, dt.future, 400)
 
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
-

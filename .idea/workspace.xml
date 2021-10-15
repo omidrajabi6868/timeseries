@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1561a81-47cd-4aa5-9226-2ff869439611" name="Default Changelist" comment="Transformer implementation">
+    <list default="true" id="a1561a81-47cd-4aa5-9226-2ff869439611" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Attention.py" beforeDir="false" afterPath="$PROJECT_DIR$/Attention.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD_model_checkpoint.tf.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD_model_checkpoint.tf.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataProcessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataVisualization.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataVisualization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Encoder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LSTM_model_checkpoint.tf.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LSTM_model_checkpoint.tf.index" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Network.py" beforeDir="false" afterPath="$PROJECT_DIR$/Network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transformer_model_checkpoint.tf.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/Transformer_model_checkpoint.tf.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Transformer_model_checkpoint.tf.index" beforeDir="false" afterPath="$PROJECT_DIR$/Transformer_model_checkpoint.tf.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PV.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/PV.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prediction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TransformerModel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transformer_model_checkpoint.tf.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Transformer_model_checkpoint.tf.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/fit/20210913-164724/train/events.out.tfevents.1631566044.DESKTOP-DVGKSRN.8424.63287.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/fit/20210913-164724/train/events.out.tfevents.1631566052.DESKTOP-DVGKSRN.profile-empty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/fit/20210913-164724/train/plugins/profile/2021_09_13_20_47_32/DESKTOP-DVGKSRN.input_pipeline.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/fit/20210913-164724/train/plugins/profile/2021_09_13_20_47_32/DESKTOP-DVGKSRN.kernel_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/fit/20210913-164724/train/plugins/profile/2021_09_13_20_47_32/DESKTOP-DVGKSRN.memory_profile.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/fit/20210913-164724/train/plugins/profile/2021_09_13_20_47_32/DESKTOP-DVGKSRN.overview_page.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/fit/20210913-164724/train/plugins/profile/2021_09_13_20_47_32/DESKTOP-DVGKSRN.tensorflow_stats.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/fit/20210913-164724/train/plugins/profile/2021_09_13_20_47_32/DESKTOP-DVGKSRN.trace.json.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/fit/20210913-164724/train/plugins/profile/2021_09_13_20_47_32/DESKTOP-DVGKSRN.xplane.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/fit/20210913-164724/validation/events.out.tfevents.1631566062.DESKTOP-DVGKSRN.8424.71179.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model.png" beforeDir="false" afterPath="$PROJECT_DIR$/model.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +37,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/timeseries$test.coverage" NAME="test Coverage Results" MODIFIED="1633388507081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SignalProcessing$main.coverage" NAME="main Coverage Results" MODIFIED="1630899851995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/timeseries$main.coverage" NAME="main Coverage Results" MODIFIED="1631565923620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/timeseries$main.coverage" NAME="main Coverage Results" MODIFIED="1633447890809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -86,87 +108,53 @@
     <session id="-949341469">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.closed" value="24" />
+          <entry key="project.open.time.0" value="5" />
+          <entry key="project.open.time.10" value="3" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.4" value="3" />
+          <entry key="project.open.time.5" value="5" />
+          <entry key="project.open.time.6" value="5" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="png" value="26" />
-          <entry key="py" value="27" />
+          <entry key="checkpoint" value="2" />
+          <entry key="csv" value="7" />
+          <entry key="ipynb" value="3" />
+          <entry key="png" value="91" />
+          <entry key="py" value="149" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="26" />
-          <entry key="Python" value="27" />
+          <entry key="CSV" value="7" />
+          <entry key="IPNB" value="3" />
+          <entry key="Image" value="91" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="149" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="663" />
+          <entry key="Python Console" value="27" />
+          <entry key="py" value="7584" />
+          <entry key="txt" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="663" />
+          <entry key="PLAIN_TEXT" value="8" />
+          <entry key="Python" value="7611" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataProcessing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Network.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="197" selection-start-line="197" selection-end-line="197" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-                <marker date="1631565923308" expanded="true" signature="2265:3945" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Attention.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -181,9 +169,17 @@
       <find>attention_mask</find>
       <find>keras</find>
       <find>B</find>
+      <find>learning_rate</find>
+      <find>improve</find>
+      <find>val_loss improved</find>
+      <find>val_loss improvw</find>
+      <find>infdec</find>
+      <find>val_loss im</find>
+      <find>clipnorm</find>
     </findStrings>
     <replaceStrings>
       <replace>tf.keras</replace>
+      <replace>model</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -194,17 +190,19 @@
       <list>
         <option value="$PROJECT_DIR$/DataLoading.py" />
         <option value="$PROJECT_DIR$/Main.ipynb" />
-        <option value="$PROJECT_DIR$/DataVisualization.py" />
         <option value="$PROJECT_DIR$/TransformerLayers.py" />
         <option value="$PROJECT_DIR$/Encoder.py" />
         <option value="$PROJECT_DIR$/Decoder.py" />
         <option value="$PROJECT_DIR$/Time2Vec.py" />
         <option value="$PROJECT_DIR$/TransformerModel.py" />
-        <option value="$PROJECT_DIR$/Prediction.py" />
-        <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/DataProcessing.py" />
         <option value="$PROJECT_DIR$/Attention.py" />
+        <option value="$PROJECT_DIR$/LearningRate.py" />
+        <option value="$PROJECT_DIR$/Prediction.py" />
         <option value="$PROJECT_DIR$/Network.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/DataVisualization.py" />
+        <option value="$PROJECT_DIR$/DataProcessing.py" />
       </list>
     </option>
   </component>
@@ -215,8 +213,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="10" />
-    <option name="y" value="20" />
+    <option name="x" value="-40" />
+    <option name="y" value="221" />
     <option name="width" value="1350" />
     <option name="height" value="690" />
   </component>
@@ -233,6 +231,16 @@
               <item name="timeseries" type="b2602c69:ProjectViewProjectNode" />
               <item name="timeseries" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="timeseries" type="b2602c69:ProjectViewProjectNode" />
+              <item name="timeseries" type="462c0819:PsiDirectoryNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="timeseries" type="b2602c69:ProjectViewProjectNode" />
+              <item name="timeseries" type="462c0819:PsiDirectoryNode" />
+              <item name="outputs" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -241,6 +249,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -248,11 +257,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\PROGRAMMER\python\PythonProjects\SignalProcessing" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\omid\Desktop" />
+      <recent name="F:\PROGRAMMER\python\PythonProjects\timeseries\Data" />
+      <recent name="F:\PROGRAMMER\python\PythonProjects\timeseries" />
+      <recent name="F:\PROGRAMMER\python\PythonProjects\timeseries\outputs" />
+      <recent name="F:\PROGRAMMER\python\PythonProjects\SignalProcessing" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\PROGRAMMER\python\PythonProjects\timeseries\outputs" />
       <recent name="F:\PROGRAMMER\python\PythonProjects\SignalProcessing" />
     </key>
   </component>
@@ -268,7 +281,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="timeseries" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -291,9 +304,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="timeseries" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\omid\Desktop\test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.test" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -315,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630979556319</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add Mask">
+      <created>1631566090759</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1631566090759</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -331,27 +378,27 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2872483" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" type="SLIDING" visible="true" weight="0.21140939" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.6331445" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5033557" side_tool="true" weight="0.5056657" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.504698" side_tool="true" weight="0.6855524" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="4" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.4966443" weight="0.5056657" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.76203966" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.49530202" type="SLIDING" weight="0.47450426" />
+      <window_info anchor="bottom" id="Debug" order="9" type="SLIDING" weight="0.39235127" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" weight="0.3286119" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Database" order="1" weight="0.3295302" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.24966443" />
-      <window_info anchor="right" id="SciView" order="4" weight="0.7127517" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24966443" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3295302" />
+      <window_info anchor="right" id="SciView" order="4" weight="0.9758389" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,256 +409,197 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Transformer implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Transformer implementation" />
+    <MESSAGE value="Add Mask" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Mask" />
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>import matplotlib.pyplot as plt 
+plt.plot(np.array(y_val[start+i:start+n+i]).flatten())
+plt.show()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>import matplotlib.pyplot as plt 
+plt.plot(y_val[start+i:start+n+i].flatten())
+plt.show()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>import matplotlib.pyplot as plt 
+plt.plot(y_val[start+i:start+n+i])
+plt.show()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>self.create_look_ahead_mask(x_decoder.shape[1])</expression-string>
+        <expression-string>s_sub[len_sub-i-1]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>(tf.convert_to_tensor(list(x_train)))</expression-string>
+        <expression-string>comparable_s</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>plot_model(encoder_model, 'model.png')</expression-string>
+        <expression-string>comparable_s.__str__()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>plot_model(encoder_model)</expression-string>
+        <expression-string>a+b+b</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>encoder_model.output</expression-string>
+        <expression-string>comparable_s[0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>encoder_model.outputs</expression-string>
+        <expression-string>str(comparable_s)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>angle_rads[np.newaxis, ...]</expression-string>
+        <expression-string>a[i - 1]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>angle_rads[:, 0::2]</expression-string>
+        <expression-string>mutateTheArray(3, a)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>angle_rads[:, 0::4]</expression-string>
+        <expression-string>model.predict([x, np.expand_dims(decoder_inputs_val[i], axis=0)])</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/framework/constant_op.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/engine/sequential.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="143" column="6" selection-start-line="143" selection-start-column="6" selection-end-line="143" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/layers/recurrent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="922" selection-start-line="922" selection-end-line="922" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/pandas/core/generic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
+        <state relative-caret-position="128">
           <caret line="5672" selection-start-line="5672" selection-end-line="5672" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/ops/gen_array_ops.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/sklearn/impute/_base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="10503" selection-start-line="10503" selection-end-line="10503" />
+        <state relative-caret-position="18">
+          <caret line="155" column="8" lean-forward="true" selection-start-line="155" selection-start-column="8" selection-end-line="155" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/pandas/core/indexing.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/sklearn/impute/_iterative.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="1307" selection-start-line="1307" selection-end-line="1307" />
+        <state relative-caret-position="-8">
+          <caret line="203" lean-forward="true" selection-start-line="203" selection-end-line="203" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/util/dispatch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="205" selection-start-line="205" selection-end-line="205" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="381" column="2" selection-start-line="381" selection-start-column="2" selection-end-line="381" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/eager/execute.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/keras/engine/training_generator_v1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="70" column="29" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/pandas/core/indexes/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="5936" selection-start-line="5936" selection-end-line="5936" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/lite/python/schema_py_generated.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="11282" lean-forward="true" selection-start-line="11282" selection-end-line="11282" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/engine/data_adapter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="1629" selection-start-line="1629" selection-end-line="1629" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/framework/func_graph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="987" selection-start-line="987" selection-end-line="987" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/matplotlib/axes/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="398" selection-start-line="398" selection-end-line="398" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/checkpoint" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/framework/ops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="1201" selection-start-line="1201" selection-end-line="1201" />
+        <state relative-caret-position="75">
+          <caret line="400" selection-start-line="400" selection-end-line="400" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myplot.png" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/utils/version_utils.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/layers/core.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        <state relative-caret-position="619">
+          <caret line="1186" column="24" lean-forward="true" selection-start-line="1186" selection-start-column="24" selection-end-line="1186" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/pandas/core/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="2995" selection-start-line="2995" selection-end-line="2995" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/pandas/core/series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="876" selection-start-line="876" selection-end-line="876" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/layers/recurrent_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="879" column="25" selection-start-line="879" selection-start-column="4" selection-end-line="879" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/initializers/initializers_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="1014" selection-start-line="1014" selection-end-line="1014" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/framework/tensor_shape.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="895" selection-start-line="895" selection-end-line="895" />
+        <state relative-caret-position="75">
+          <caret line="1073" column="78" lean-forward="true" selection-start-line="1073" selection-start-column="78" selection-end-line="1073" selection-end-column="78" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-1407790563/builtins.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/framework/constant_op.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="5280" column="8" selection-start-line="5280" selection-start-column="8" selection-end-line="5280" selection-end-column="8" />
+        <state relative-caret-position="226">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Encoder.py" />
-    <entry file="file://$PROJECT_DIR$/Decoder.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/engine/keras_tensor.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/engine/base_layer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="1013" column="15" lean-forward="true" selection-start-line="1013" selection-start-column="15" selection-end-line="1013" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/framework/func_graph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="987" selection-start-line="987" selection-end-line="987" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/eager/execute.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
-          <caret line="224" column="58" lean-forward="true" selection-start-line="224" selection-start-column="58" selection-end-line="224" selection-end-column="58" />
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/engine/input_spec.py">
+    <entry file="file://$PROJECT_DIR$/outputs/An hour ahead_bidirectional.png" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/optimizer_v2/learning_rate_schedule.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="234" selection-start-line="234" selection-end-line="234" />
+        <state relative-caret-position="114">
+          <caret line="146" column="6" selection-start-line="146" selection-start-column="6" selection-end-line="146" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/layers/convolutional.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/optimizer_v2/adam.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="577" column="38" lean-forward="true" selection-start-line="577" selection-start-column="38" selection-end-line="577" selection-end-column="38" />
+        <state relative-caret-position="210">
+          <caret line="356" column="59" selection-start-line="356" selection-start-column="51" selection-end-line="356" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/utils/conv_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/IPython/core/display.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="752" column="28" lean-forward="true" selection-start-line="752" selection-start-column="28" selection-end-line="752" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/callbacks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="1418" selection-start-line="1418" selection-end-line="1418" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/engine/training.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="492" column="12" selection-start-line="492" selection-start-column="8" selection-end-line="492" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PV.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="238">
-          <caret line="325" column="74" selection-start-line="325" selection-start-column="74" selection-end-line="325" selection-end-column="74" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Data/PV.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
           <column index="0" width="100" />
@@ -629,42 +617,28 @@
           <column index="12" width="100" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prediction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="9" column="42" lean-forward="true" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="-154975">
+          <caret line="195" column="49" selection-start-line="195" selection-start-column="49" selection-end-line="195" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/checkpoint">
+    <entry file="file://$PROJECT_DIR$/outputs/An hour ahead_LSTM_0.03075.png" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/matplotlib/pyplot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="54" selection-start-column="35" selection-end-column="54" />
+        <state relative-caret-position="619">
+          <caret line="874" lean-forward="true" selection-start-line="874" selection-end-line="874" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataVisualization.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-49">
-          <caret line="70" column="26" lean-forward="true" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/An hour ahead_GRU.png" />
+    <entry file="file://$PROJECT_DIR$/TransformerModel.py" />
+    <entry file="file://$PROJECT_DIR$/models/checkpoint">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/engine/functional.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="303" selection-start-line="303" selection-end-line="303" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/engine/base_layer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="2978" selection-start-line="2978" selection-end-line="2978" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/outputs/An hour ahead_RNN_0.03059.png" />
+    <entry file="file://$PROJECT_DIR$/Decoder.png" />
+    <entry file="file://$PROJECT_DIR$/outputs/An hour ahead_LSTM_0.03162.png" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/autograph/impl/api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="39">
@@ -672,77 +646,118 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Time2Vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/engine/functional.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="989" selection-start-line="989" selection-end-line="989" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/model.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Encoder.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TransformerModel.py">
+    <entry file="file://$PROJECT_DIR$/Prediction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="58" />
+        <state relative-caret-position="72">
+          <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/engine/data_adapter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="1629" selection-start-line="1629" selection-end-line="1629" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Encoder.png" />
+    <entry file="file://$PROJECT_DIR$/outputs/An hour ahead_BD_0.03109.png" />
+    <entry file="file://$PROJECT_DIR$/outputs/An hour ahead_RNN_0.03762.png" />
+    <entry file="file://$PROJECT_DIR$/outputs/An hour ahead_GRU_ 0.03763.png" />
+    <entry file="file://$PROJECT_DIR$/Attention.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outputs/An hour ahead_Transformer.png" />
+    <entry file="file://$PROJECT_DIR$/outputs/An hour ahead_RNN_0.03927.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outputs/An hour ahead_GRU_0.03834.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outputs/An hour ahead_Transformer_0.00560.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outputs/An hour ahead_together.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outputs/An hour ahead_BD_0.03672.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outputs/An hour ahead_LSTM_0.03786.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Time2Vec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataProcessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        <state relative-caret-position="619">
+          <caret line="67" column="86" selection-start-line="67" selection-start-column="86" selection-end-line="67" selection-end-column="86" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/layers/wrappers.py">
+    <entry file="file://$PROJECT_DIR$/DataProcessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-254">
-          <caret line="180" selection-start-line="180" selection-end-line="180" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tensorflow/python/keras/layers/multi_head_attention.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="490" column="26" lean-forward="true" selection-start-line="490" selection-start-column="11" selection-end-line="490" selection-end-column="26" />
+        <state relative-caret-position="306">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="26" />
           <folding>
-            <element signature="e#788#806#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Attention.py">
+    <entry file="file://$PROJECT_DIR$/DataVisualization.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="619">
+          <caret line="132" selection-start-line="132" selection-end-line="132" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
+            <marker date="1633447890762" expanded="true" signature="6205:6215" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="197" selection-start-line="197" selection-end-line="197" />
+        <state relative-caret-position="619">
+          <caret line="243" selection-start-line="243" selection-end-line="243" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <marker date="1631565923308" expanded="true" signature="2265:3945" ph="..." />
           </folding>
         </state>
       </provider>

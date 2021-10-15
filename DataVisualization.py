@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
 from tensorflow import keras
+from Network import Network
 
 
 class DataVisualization:
@@ -48,7 +49,7 @@ class DataVisualization:
         plt.show()
 
     def show_heatmap(self):
-        data = self.df
+        data = self.df.drop(self.df.keys()[:2], axis=1)
         plt.matshow(data.corr())
         plt.xticks(range(data.shape[1]), data.columns, fontsize=14, rotation=90)
         plt.gca().xaxis.tick_bottom()
@@ -72,53 +73,133 @@ class DataVisualization:
         plt.legend()
         plt.show()
 
-    def show_plot(self, plot_data, delta, title):
-        labels = ["History", "True Future", "Model Prediction"]
-        marker = [".-", "rx-", "go-"]
-        time_steps = list(range(-(plot_data[0].shape[0]), 0))
-        if delta:
-            future = np.arange(start=0, stop=delta)
-        else:
-            future = 0
+    def show_plot(self, val_data, model, model_name, past, future, n_steps):
 
-        plt.title(title)
-        for i, val in enumerate(plot_data):
-            if i:
-                plt.plot(future, np.array(plot_data[i]).flatten(), marker[i], label=labels[i])
-            else:
-                plt.plot(time_steps, plot_data[i].flatten(), marker[i], label=labels[i])
-        plt.legend()
-        # plt.xlim([time_steps[0], (future + 5) * 2])
-        plt.xlabel("Time-Step")
-        plt.show()
-        return
-
-    def plot_val_data(self, x_val, y_val, model):
+        predicts, true_y= self.prediction(val_data, model, model_name, past, future, n_steps)
         labels = ["True Future", "Model Prediction"]
-        marker = [".-", "rx"]
+        marker = [".-", "rx-"]
 
-        for x, y in zip(x_val.take(3), y_val.take(3)):
-            x_list = []
-            x_prediction = []
-            for i, item in enumerate(x):
-                if i == 0:
-                    x_list = [m.numpy()[0] for m in item]
-                    x_prediction.append(model.predict(tf.expand_dims(item, 0))[0])
-                else:
-                    x_list.append(item.numpy()[-1][0])
-                    item = tf.concat([item[:-i], np.array(x_prediction)], axis=0)
-                    x_prediction.append(model.predict(tf.expand_dims(item, 0))[0])
+        time_steps = list(range(-(len(true_y)), 0))
+        plt.title('')
+        plt.plot(time_steps, true_y, marker[0], markersize=0.1, label=labels[0])
+        plt.plot(time_steps, predicts, marker[1], markersize=0.1, label=labels[1])
+        plt.legend()
 
-            x_prediction = [i[0] for i in x_prediction]
-            time_steps = list(range(-(len(x_list)), 0))
-            plt.figure()
-            plt.title("show validation data")
-            plt.plot(time_steps, x_list, marker[0], markersize=0.1, label=labels[0])
-            plt.plot(list(range(-len(x_prediction), 0)), x_prediction, markersize=0.1, label=labels[1])
-            plt.legend()
-            plt.xlabel("Time-Step")
-            plt.show()
+        plt.xlabel("Time-Step")
+        if future == 4:
+            plt.savefig('outputs/An hour ahead_' + model_name + '.png')
+        if future ==96:
+            plt.savefig('outputs/a day ahead_' + model_name+ '.png')
+        plt.show()
 
         return
+
+    def show_together(self, val_data, inputs_shape, targets_shape, past, future, n_steps):
+
+        transformermodel, transformermodel_name = Network(input_shape=inputs_shape,
+                                     output_shape=targets_shape,
+                                     learning_rate=0.01).transformerModel()
+
+        bi_model, bi_model_name = Network(input_shape=inputs_shape,
+                              output_shape=targets_shape,
+                              learning_rate=0.01).bidirectional()
+
+        lstm_model, lstm_model_name = Network(input_shape=inputs_shape,
+                                output_shape=targets_shape,
+                                learning_rate=0.01).simpleLSTM()
+
+        gru_model, gru_model_name = Network(input_shape=inputs_shape,
+                               output_shape=targets_shape,
+                               learning_rate=0.01).simpleGRU()
+
+        rnn_model, rnn_model_name = Network(input_shape=inputs_shape,
+                               output_shape=targets_shape,
+                               learning_rate=0.01).simpleRNN()
+
+        transformermodel.load_weights('models/' + transformermodel_name + "_model_checkpoint.tf")
+        bi_model.load_weights('models/' + bi_model_name + "_model_checkpoint.tf")
+        lstm_model.load_weights('models/' + lstm_model_name + "_model_checkpoint.tf")
+        gru_model.load_weights('models/' + gru_model_name + "_model_checkpoint.tf")
+        rnn_model.load_weights('models/' + rnn_model_name + "_model_checkpoint.tf")
+
+        predicts_tr, true_y = self.prediction(val_data, transformermodel, transformermodel_name, past, future, n_steps)
+        predicts_bi, true_y = self.prediction(val_data, bi_model, bi_model_name, past, future, n_steps)
+        predicts_lstm, true_y = self.prediction(val_data, lstm_model, lstm_model_name, past, future, n_steps)
+        predicts_gru, true_y = self.prediction(val_data, gru_model, gru_model_name, past, future, n_steps)
+        predicts_rnn, true_y = self.prediction(val_data, rnn_model, rnn_model_name, past, future, n_steps)
+
+        labels = ["True Future", transformermodel_name, bi_model_name,
+                  lstm_model_name, gru_model_name, rnn_model_name]
+
+        marker = ["-", "--", "-.", ":", ":", ":"]
+
+        time_steps = list(range(-(len(true_y)), 0))
+        plt.figure(figsize=(25, 10))
+        plt.title('')
+        plt.plot(time_steps, true_y, marker[0], markersize=5, label=labels[0])
+        plt.plot(time_steps, predicts_tr, marker[1], markersize=3, label=labels[1])
+        plt.plot(time_steps, predicts_bi, marker[2], markersize=3, label=labels[2])
+        plt.plot(time_steps, predicts_lstm, marker[3], markersize=3, label=labels[3])
+        plt.plot(time_steps, predicts_gru, marker[4], markersize=3, label=labels[4])
+        plt.plot(time_steps, predicts_rnn, marker[5], markersize=3, label=labels[5])
+        plt.legend()
+
+        plt.xlabel("Time-Step")
+        if future == 4:
+            plt.savefig('outputs/An hour ahead_together.png')
+        if future == 96:
+            plt.savefig('outputs/A day ahead_together.png')
+        plt.show()
+
+    def prediction(self, val_data, model, model_name, past, future, n_steps):
+
+        x_val = keras.preprocessing.timeseries_dataset_from_array(
+            val_data,
+            targets=None,
+            sequence_length=past,
+            sampling_rate=1,
+            batch_size=1,
+        )
+
+        y_val = keras.preprocessing.timeseries_dataset_from_array(
+            val_data[past:],
+            targets=None,
+            sequence_length=future,
+            sampling_rate=1,
+            batch_size=1,
+        )
+
+        decoder_inputs_val = []
+        for mat in y_val:
+            for m in mat:
+                if len(m) < 2:
+                    decoder_inputs_val.append(np.array([-1]))
+                else:
+                    decoder_inputs_val.append(np.concatenate([np.array([-1]), np.squeeze(m)[:-1]], axis=0))
+
+        predicts = np.array([])
+        true_y = np.array([])
+        i = 0
+        for x, y in zip(x_val.take(n_steps), y_val.take(n_steps)):
+
+            if model_name == 'Transformer':
+                predicted_data = model.predict([x, np.expand_dims(decoder_inputs_val[i], axis=0)])
+            else:
+                predicted_data = model.predict([x, np.array([-1])])
+
+            predicted_data = np.array([item for item in predicted_data])
+            predicted_data = np.squeeze(predicted_data)
+            if i == 0:
+                predicts = np.concatenate([predicts, predicted_data], axis=0)
+                true_y = np.concatenate([true_y, np.squeeze(y)], axis=0)
+            predicts = np.concatenate([predicts, np.array([predicted_data[-1]])], axis=0)
+            true_y = np.concatenate([true_y, np.array([np.squeeze(y)[-1]])], axis=0)
+
+            i += 1
+
+        return predicts, true_y
+
+
+
 
 
